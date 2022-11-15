@@ -1050,7 +1050,7 @@ enabled = false
 url = https://discord.com/api/webhooks/id/token
 
 # Datadog output module
-# sends JSON directly to DataDog
+# sends JSON directly to Datadog
 # mandatory field: api_key
 # optional fields (fallback configured in module): ddsource, ddtags, service
 # For more information on fields https://docs.datadoghq.com/api/latest/logs/#send-logs
