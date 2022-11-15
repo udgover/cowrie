@@ -1,7 +1,7 @@
-How to send Cowrie output to Datadog
-####################################
+How to send Cowrie output to Datadog Log Management
+###################################################
 
-This guide describes how to configure and send cowrie outputs to Datadog.
+This guide describes how to configure and send cowrie outputs to Datadog Log Management.
 
 Datadog output module Prerequisites
 ***********************************
