@@ -32,6 +32,7 @@ Welcome to Cowrie's documentation!
    supervisor/README.rst
    systemd/README.rst
    threatjammer/README.rst
+   datadog/README.rst
 
 Indices and tables
 ==================
