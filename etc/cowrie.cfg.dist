@@ -1049,7 +1049,7 @@ bearer_token = THREATJAMMER_API_TOKEN
 enabled = false
 url = https://discord.com/api/webhooks/id/token
 
-# DataDog output module
+# Datadog output module
 # sends JSON directly to DataDog
 # mandatory field: api_key
 # optional fields (fallback configured in module): ddsource, ddtags, service
