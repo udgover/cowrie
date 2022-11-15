@@ -10,6 +10,7 @@ import platform
 from io import BytesIO
 from twisted.internet import reactor
 from twisted.internet.ssl import ClientContextFactory
+from twisted.python import log
 from twisted.web import client, http_headers
 from twisted.web.client import FileBodyProducer
 
@@ -20,9 +21,11 @@ from cowrie.core.config import CowrieConfig
 class Output(cowrie.core.output.Output):
     def start(self):
         self.url = CowrieConfig.get("output_datadog", "url").encode("utf8")
-        self.api_key = CowrieConfig.get("output_datadog", "api_key").encode("utf8")
+        self.api_key = CowrieConfig.get("output_datadog", "api_key", fallback="").encode("utf8")
+        if len(self.api_key) == 0:
+            log.msg("Datadog output module: API key is not defined.")
         self.ddsource = CowrieConfig.get("output_datadog", "ddsource", fallback="cowrie")
-        self.ddtags = CowrieConfig.get("output_datadog", "ddtags", fallback="env:prod")
+        self.ddtags = CowrieConfig.get("output_datadog", "ddtags", fallback="env:dev")
         self.service = CowrieConfig.get("output_datadog", "service", fallback="honeypot")
         contextFactory = WebClientContextFactory()
         self.agent = client.Agent(reactor, contextFactory)
@@ -44,7 +47,6 @@ class Output(cowrie.core.output.Output):
                 "service": self.service
             }
         ]
-        print(message)
         self.postentry(message)
 
     def postentry(self, entry):
