@@ -7,7 +7,7 @@ Datadog output module Prerequisites
 ***********************************
 
 * Working Cowrie installation
-* Existing Datadog Organization. `You can sign up for free Datadog trial for 14 days <https://www.datadoghq.com/free-datadog-trial/>`_.
+* Existing Datadog account.
 
 Cowrie Configuration for Datadog output module
 **********************************************
