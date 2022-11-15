@@ -49,10 +49,10 @@ class Output(cowrie.core.output.Output):
 
     def postentry(self, entry):
         base_headers = {
-                b"Accept": [ b"application/json" ],
-                b"Content-Type": [ b"application/json" ],
-                b"DD-API-KEY": [ self.api_key ]
-            }
+            b"Accept": [b"application/json"],
+            b"Content-Type": [b"application/json"],
+            b"DD-API-KEY": [self.api_key]
+        }
         headers = http_headers.Headers(base_headers)
         body = FileBodyProducer(BytesIO(json.dumps(entry).encode("utf8")))
         self.agent.request(b"POST", self.url, headers, body)
