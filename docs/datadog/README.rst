@@ -7,15 +7,14 @@ Datadog output module Prerequisites
 ***********************************
 
 * Working Cowrie installation
-* Existing Datadog Organization. `You can sign up for free Datadog trial for 14 days <https://www.datadoghq.com/free-datadog-trial/>`_
+* Existing Datadog Organization. `You can sign up for free Datadog trial for 14 days <https://www.datadoghq.com/free-datadog-trial/>`_.
 
 Cowrie Configuration for Datadog output module
 **********************************************
 
-* `Copy API Key <https://app.datadoghq.com/organization-settings/api-keys>`_ for later use
-* Modify ``cowrie.cfg`` to enable the ``[output_datadog]`` section
-* Add the API Key you copied in the previous step
-* Optionally customize ddsource, ddtags and service. Otherwise, defaults are respectively "cowrie", "env:prod" and "honeypot".  
+* Modify ``cowrie.cfg`` to enable the ``[output_datadog]`` section.
+* Add an API Key. You may generate one for your organisation from `here <https://app.datadoghq.com/organization-settings/api-keys>`_.
+* Optionally customize ``ddsource``, ``ddtags`` and ``service``. Otherwise, defaults are respectively ``cowrie``, ``env:prod`` and ``honeypot``.
 
 Datadog Configuration
 *********************
